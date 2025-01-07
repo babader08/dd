@@ -88,95 +88,11 @@
           font-size: 14px;
         }
       }
-
-      .navbar {
-        text-align: center;
-      }
-      .navbar a {
-        text-decoration: none;
-        color: #1b599b;
-        font-size: 20px;
-        margin: 0 20px;
-      }
-      .navbar a:hover {
-        color: rgb(5, 0, 64);
-        transition: 0.3s;
-      }
-      @media (max-width: 527px) {
-        .navbar a {
-          display: block;
-          text-decoration: none;
-          color: #1b599b;
-          font-size: 16px;
-          margin: 0 15px;
-        }
-      }
-      .custom-dropdown {
-        display: inline-block; /* Réduit la largeur au contenu */
-      }
-
-      .custom-dropdown .dropdown-menu {
-        min-width: 200px; /* Définit une largeur fixe ou minimale pour le menu */
-      }
-
-      .custom-dropdown .btn {
-        padding: 10px 70px; /* Ajuste la taille du bouton */
-        margin-left: 240%;
-      }
-      /* Empêcher le débordement de la page */
-body {
-  overflow-x: hidden; /* Cela évite que la page puisse défiler horizontalement */
-}
-
-/* Style du menu déroulant */
-.dropdown-menu {
-  width: auto; /* Laisser le menu s'adapter à son contenu */
-  min-width: 0; /* Assurer que le menu ne dépasse pas */
-  box-sizing: border-box;
-}
-
-/* Pour les écrans mobiles */
-@media (max-width: 768px) {
-  .dropdown-menu {
-    position: absolute; /* Positionner le menu de manière absolue */
-    left: 0;
-    right: 0;
-    width: 100%; /* Faire en sorte que le menu occupe toute la largeur */
-    top: 100%; /* Positionner le menu juste en dessous du bouton */
-  }
-
-  .dropdown-center {
-    text-align: center; /* Centrer le bouton sur mobile */
-    width: 100%; /* S'assurer que le bouton occupe toute la largeur de l'écran */
-  }
-}
-
-
     </style>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/3.7.0/chart.min.js"></script>
   </head>
   <body>
-    <div class="dropdown-center custom-dropdown">
-      <button
-        class="btn bg-primary bg-gradient text-white dropdown-toggle"
-        type="button"
-        data-bs-toggle="dropdown"
-        aria-expanded="false"
-      >
-        Menu Principal
-      </button>
-      <ul class="dropdown-menu">
-        <li><a class="dropdown-item" href="page1.html">À propos</a></li>
-        <li>
-          <a class="dropdown-item" href="page2.html"
-            >Politique de confidentialité</a
-          >
-        </li>
-        <li><a class="dropdown-item" href="page3.html">Contact</a></li>
-      </ul>
-    </div>
-
-    <div class="container">
+   <div class="container">
       <h2>Testez votre capacité à atteindre votre objectif</h2>
       <div id="progressBar"><div></div></div>
       <div id="questionContainer">
