@@ -123,6 +123,26 @@
         padding: 10px 70px; /* Ajuste la taille du bouton */
         margin-left: 240%;
       }
+      /* Style général du menu déroulant */
+.dropdown-menu {
+  width: 100%; /* S'assure que le menu ne déborde pas */
+  box-sizing: border-box; /* Prend en compte les bordures et le padding dans la largeur */
+}
+
+/* Pour les petits écrans (mobiles) */
+@media (max-width: 768px) {
+  .dropdown-menu {
+    position: relative; /* Position par rapport à son conteneur */
+    width: 100vw; /* Laisse le menu occuper toute la largeur de l'écran sur mobile */
+    left: 0;
+    right: 0;
+  }
+
+  .dropdown-center {
+    text-align: center; /* Centrer le bouton du menu */
+  }
+}
+
     </style>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/3.7.0/chart.min.js"></script>
   </head>
