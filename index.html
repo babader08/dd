@@ -1,278 +1,315 @@
 <!DOCTYPE html>
 <html lang="fr">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-6536681674756051"
-     crossorigin="anonymous"></script>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <script
+      async
+      src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-6536681674756051"
+      crossorigin="anonymous"
+    ></script>
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH"
+      crossorigin="anonymous"
+    />
     <title>Testez votre capacité à atteindre votre objectif</title>
     <style>
-        body {
-            font-family: Arial, sans-serif;
-            line-height: 1.6;
-            margin: 0;
-            padding: 20px;
-            background-color: #f4f4f4;
-        }
+      body {
+        font-family: Arial, sans-serif;
+        line-height: 1.6;
+        margin: 0;
+        padding: 20px;
+        background-color: #f4f4f4;
+      }
+      .container {
+        max-width: 600px;
+        margin: 40px auto;
+        background-color: #fff;
+        padding: 30px;
+        border-radius: 5px;
+        box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+      }
+      h1,
+      h2,
+      h3 {
+        text-align: center;
+        color: #333;
+      }
+      #questionContainer,
+      #resultContainer {
+        margin-top: 20px;
+      }
+      button {
+        display: block;
+        width: 100%;
+        padding: 10px;
+        background-color: #007bff;
+        color: #fff;
+        border: none;
+        border-radius: 5px;
+        cursor: pointer;
+        margin-top: 10px;
+      }
+      button:hover {
+        background-color: #0056b3;
+      }
+      #progressBar {
+        width: 100%;
+        background-color: #e0e0e0;
+        padding: 3px;
+        border-radius: 3px;
+        box-shadow: inset 0 1px 3px rgba(0, 0, 0, 0.2);
+      }
+      #progressBar div {
+        width: 0;
+        height: 20px;
+        background-color: #4caf50;
+        border-radius: 3px;
+        transition: width 0.5s ease-in-out;
+      }
+      #graphContainer {
+        margin-top: 20px;
+        width: 100%;
+        height: 200px;
+      }
+      .citation {
+        font-style: italic;
+        text-align: center;
+        margin-top: 20px;
+        color: #555;
+      }
+      @media (max-width: 600px) {
         .container {
-            max-width: 600px;
-            margin: 0 auto;
-            background-color: #fff;
-            padding: 20px;
-            border-radius: 5px;
-            box-shadow: 0 0 10px rgba(0,0,0,0.1);
-        }
-        h1, h2, h3 {
-            text-align: center;
-            color: #333;
-        }
-        #questionContainer, #resultContainer {
-            margin-top: 20px;
+          padding: 20px;
         }
         button {
-            display: block;
-            width: 100%;
-            padding: 10px;
-            background-color: #007bff;
-            color: #fff;
-            border: none;
-            border-radius: 5px;
-            cursor: pointer;
-            margin-top: 10px;
+          font-size: 14px;
         }
-        button:hover {
-            background-color: #0056b3;
-        }
-        #progressBar {
-            width: 100%;
-            background-color: #e0e0e0;
-            padding: 3px;
-            border-radius: 3px;
-            box-shadow: inset 0 1px 3px rgba(0, 0, 0, .2);
-        }
-        #progressBar div {
-            width: 0;
-            height: 20px;
-            background-color: #4CAF50;
-            border-radius: 3px;
-            transition: width 0.5s ease-in-out;
-        }
-        #graphContainer {
-            margin-top: 20px;
-            width: 100%;
-            height: 200px;
-        }
-        .citation {
-            font-style: italic;
-            text-align: center;
-            margin-top: 20px;
-            color: #555;
-        }
-        @media (max-width: 600px) {
-            .container {
-                padding: 10px;
-            }
-            button {
-                font-size: 14px;
-            }
-        }
-        #shareButton {
-        padding: 10px 20px;
-        background-color: #4CAF50;
-        color: white;
-        border: none;
-        cursor: pointer;
-        font-size: 16px;
-        border-radius: 5px;
-        margin-top: 20px;
-        display: none; /* Initialement caché */
-    }
+      }
 
-    #shareButton:hover {
-        background-color: #45a049;
-    }
+      .navbar {
+        text-align: center;
+      }
+      .navbar a {
+        text-decoration: none;
+        color: #1b599b;
+        font-size: 20px;
+        margin: 0 20px;
+      }
+      .navbar a:hover {
+        color: rgb(5, 0, 64);
+        transition: 0.3s;
+      }
+      @media (max-width: 527px) {
+        .navbar a {
+          display: block;
+          text-decoration: none;
+          color: #1b599b;
+          font-size: 16px;
+          margin: 0 15px;
+        }
+      }
+      .custom-dropdown {
+        display: inline-block; /* Réduit la largeur au contenu */
+      }
+
+      .custom-dropdown .dropdown-menu {
+        min-width: 200px; /* Définit une largeur fixe ou minimale pour le menu */
+      }
+
+      .custom-dropdown .btn {
+        padding: 10px 70px; /* Ajuste la taille du bouton */
+        margin-left: 240%;
+      }
     </style>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/3.7.0/chart.min.js"></script>
-</head>
-<body>
-    
-    <div class="container">
-        <h2>Testez votre capacité à atteindre votre objectif</h2>
-        <div id="progressBar"><div></div></div>
-        <div id="questionContainer">
-            <h2 id="question"></h2>
-            <button onclick="repondre(true)">Oui</button>
-            <button onclick="repondre(false)">Non</button>
-        </div>
-        <div id="resultContainer" style="display: none;">
-            <h2>Résultat</h2>
-            <p id="result"></p>
-            <h3>Conseil</h3>
-            <p id="conseil"></p>
-            <p id="citation" class="citation"></p>
-            <div id="graphContainer">
-                <canvas id="resultGraph"></canvas>
-            </div>
-            <button onclick="recommencer()">Recommencer le test</button>
-            <br>
-            <div id="result"></div>
+  </head>
+  <body>
+    <div class="dropdown-center custom-dropdown">
+      <button
+        class="btn bg-primary bg-gradient text-white dropdown-toggle"
+        type="button"
+        data-bs-toggle="dropdown"
+        aria-expanded="false"
+      >
+        Menu Principal
+      </button>
+      <ul class="dropdown-menu">
+        <li><a class="dropdown-item" href="page1.html">À propos</a></li>
+        <li>
+          <a class="dropdown-item" href="page2.html"
+            >Politique de confidentialité</a
+          >
+        </li>
+        <li><a class="dropdown-item" href="page3.html">Contact</a></li>
+      </ul>
+    </div>
 
-            <!-- Bouton de partage -->
-             <button id="shareButton" onclick="shareResult()">Partager avec tes amis</button>
+    <div class="container">
+      <h2>Testez votre capacité à atteindre votre objectif</h2>
+      <div id="progressBar"><div></div></div>
+      <div id="questionContainer">
+        <h2 id="question"></h2>
+        <button onclick="repondre(true)">Oui</button>
+        <button onclick="repondre(false)">Non</button>
+      </div>
+      <div id="resultContainer" style="display: none">
+        <h2>Résultat</h2>
+        <p id="result"></p>
+        <h3>Conseil</h3>
+        <p id="conseil"></p>
+        <p id="citation" class="citation"></p>
+        <div id="graphContainer">
+          <canvas id="resultGraph"></canvas>
         </div>
+        <button onclick="recommencer()">Recommencer le test</button>
+      </div>
     </div>
 
     <script>
-        const questions = [
-            "Avez-vous un objectif clair et précis ?",
-            "Votre objectif est-il réaliste et atteignable ?",
-            "Avez-vous défini un délai pour atteindre votre objectif ?",
-            "Avez-vous un plan d'action détaillé ?",
-            "Êtes-vous motivé(e) à atteindre cet objectif ?",
-            "Avez-vous les compétences nécessaires pour atteindre votre objectif ?",
-            "Êtes-vous prêt(e) à acquérir de nouvelles compétences si nécessaire ?",
-            "Avez-vous le soutien de votre entourage ?",
-            "Êtes-vous capable de gérer votre temps efficacement ?",
-            "Avez-vous identifié les obstacles potentiels ?",
-            "Avez-vous un plan B en cas d'échec ?",
-            "Êtes-vous capable de rester concentré(e) sur votre objectif ?",
-            "Avez-vous divisé votre objectif en étapes plus petites et gérables ?",
-            "Êtes-vous prêt(e) à faire des sacrifices pour atteindre votre objectif ?",
-            "Avez-vous des expériences passées de réussite similaire ?",
-            "Êtes-vous capable de vous auto-motiver ?",
-            "Avez-vous une bonne gestion du stress ?",
-            "Êtes-vous capable de demander de l'aide si nécessaire ?",
-            "Avez-vous une bonne capacité d'adaptation face aux changements ?",
-            "Êtes-vous persévérant(e) face aux difficultés ?",
-            "Avez-vous une bonne confiance en vous ?",
-            "Êtes-vous capable de prendre des décisions rapidement ?",
-            "Avez-vous une bonne capacité d'apprentissage ?",
-            "Êtes-vous organisé(e) dans votre approche ?",
-            "Avez-vous une bonne gestion de vos ressources (temps, énergie) ?",
-            "Êtes-vous capable de rester positif(ve) face aux difficultés ?",
-            "Avez-vous une bonne capacité d'auto-évaluation ?",
-            "Êtes-vous prêt(e) à sortir de votre zone de confort ?",
-            "Avez-vous une bonne capacité à résoudre des problèmes ?",
-            "Êtes-vous déterminé(e) à atteindre votre objectif quoi qu'il arrive ?",
-            "Avez-vous une vision à long terme de votre objectif ?",
-            "Êtes-vous capable de maintenir un équilibre entre votre objectif et votre vie personnelle ?",
-            "Avez-vous établi des critères de mesure pour atteindre votre objectif ?",
-            "Êtes-vous ouvert(e) aux feedbacks constructifs ?",
-            "Avez-vous une stratégie pour surmonter les moments de doute ?",
-            "Êtes-vous prêt(e) à ajuster votre approche si nécessaire ?",
-            "Avez-vous identifié les ressources dont vous aurez besoin ?",
-            "Êtes-vous capable de célébrer les petites victoires en cours de route ?",
-            "Avez-vous un réseau de soutien ou un mentor pour vous guider ?",
-            "Êtes-vous prêt(e) à persévérer même si les résultats ne sont pas immédiats ?"
+      const questions = [
+        "Avez-vous un objectif clair et précis ?",
+        "Votre objectif est-il réaliste et atteignable ?",
+        "Avez-vous défini un délai pour atteindre votre objectif ?",
+        "Avez-vous un plan d'action détaillé ?",
+        "Êtes-vous motivé(e) à atteindre cet objectif ?",
+        "Avez-vous les compétences nécessaires pour atteindre votre objectif ?",
+        "Êtes-vous prêt(e) à acquérir de nouvelles compétences si nécessaire ?",
+        "Avez-vous le soutien de votre entourage ?",
+        "Êtes-vous capable de gérer votre temps efficacement ?",
+        "Avez-vous identifié les obstacles potentiels ?",
+        "Avez-vous un plan B en cas d'échec ?",
+        "Êtes-vous capable de rester concentré(e) sur votre objectif ?",
+        "Avez-vous divisé votre objectif en étapes plus petites et gérables ?",
+        "Êtes-vous prêt(e) à faire des sacrifices pour atteindre votre objectif ?",
+        "Avez-vous des expériences passées de réussite similaire ?",
+        "Êtes-vous capable de vous auto-motiver ?",
+        "Avez-vous une bonne gestion du stress ?",
+        "Êtes-vous capable de demander de l'aide si nécessaire ?",
+        "Avez-vous une bonne capacité d'adaptation face aux changements ?",
+        "Êtes-vous persévérant(e) face aux difficultés ?",
+        "Avez-vous une bonne confiance en vous ?",
+        "Êtes-vous capable de prendre des décisions rapidement ?",
+        "Avez-vous une bonne capacité d'apprentissage ?",
+        "Êtes-vous organisé(e) dans votre approche ?",
+        "Avez-vous une bonne gestion de vos ressources (temps, énergie) ?",
+        "Êtes-vous capable de rester positif(ve) face aux difficultés ?",
+        "Avez-vous une bonne capacité d'auto-évaluation ?",
+        "Êtes-vous prêt(e) à sortir de votre zone de confort ?",
+        "Avez-vous une bonne capacité à résoudre des problèmes ?",
+        "Êtes-vous déterminé(e) à atteindre votre objectif quoi qu'il arrive ?",
+        "Avez-vous une vision à long terme de votre objectif ?",
+        "Êtes-vous capable de maintenir un équilibre entre votre objectif et votre vie personnelle ?",
+        "Avez-vous établi des critères de mesure pour atteindre votre objectif ?",
+        "Êtes-vous ouvert(e) aux feedbacks constructifs ?",
+        "Avez-vous une stratégie pour surmonter les moments de doute ?",
+        "Êtes-vous prêt(e) à ajuster votre approche si nécessaire ?",
+        "Avez-vous identifié les ressources dont vous aurez besoin ?",
+        "Êtes-vous capable de célébrer les petites victoires en cours de route ?",
+        "Avez-vous un réseau de soutien ou un mentor pour vous guider ?",
+        "Êtes-vous prêt(e) à persévérer même si les résultats ne sont pas immédiats ?",
+      ];
 
+      let questionIndex = 0;
+      let reponses = [];
+      let chart;
 
-    
-        ];
-
-        let questionIndex = 0;
-        let reponses = [];
-        let chart;
-
-        function afficherQuestion() {
-            if (questionIndex < questions.length) {
-                document.getElementById("question").textContent = questions[questionIndex];
-                updateProgressBar();
-            } else {
-                afficherResultat();
-            }
-        }
-
-        function repondre(reponse) {
-            reponses.push(reponse);
-            questionIndex++;
-            afficherQuestion();
-        }
-
-        function updateProgressBar() {
-            const progress = (questionIndex / questions.length) * 100;
-            document.querySelector("#progressBar div").style.width = progress + "%";
-        }
-
-        function afficherResultat() {
-            const score = reponses.filter(r => r).length;
-            const pourcentage = (score / questions.length) * 100;
-            let resultat, conseil, citation;
-
-            if (pourcentage >= 70) {
-                resultat = `Résultat : Tu es sur la bonne voie avec ${pourcentage.toFixed(0)}% de chances de réussite !`;
-                conseil =  "félicitations, tu es sur la bonne voie. Mais souviens-toi, même les victoires peuvent être éphémères. Les efforts ne sont jamais finis, et parfois, malgré tout le travail accompli, il peut suffire d'un rien pour tout perdre. Continue de te battre, car le pire pourrait encore venir..";
-                citation = "\"Le succès n'est pas final, l'échec n'est pas fatal : c'est le courage de continuer qui compte.\" – Winston Churchill";
-            } else {
-                resultat = "Résultat : Faible pour le moment, mais tout est encore possible avec plus de travail !";
-                conseil = "ecoute moi, le chemin est difficile, et aujourd'hui, tu n'as pas réussi à franchir certains l'obstacle, si tu veut reussir vous devez laisser beaucoup de chose qui n'est pas lié à votre objectif, Mais parfois, il semble que tout est contre toi, que tes efforts ne sont pas récompensés; Et pourtant, c'est souvent dans ces moments de défaite que se cache la force nécessaire pour continuer. Mais il faut accepter que, même avec tout ton cœur et ton travail, la victoire pourrait encore te fuir donc il faut jamais abandonner...";
-                citation = "\"Ne perds jamais espoir, c'est souvent la dernière clé du trousseau qui ouvre la porte.\" – Paulo Coelho";
-            }
-
-            document.getElementById("questionContainer").style.display = "none";
-            document.getElementById("resultContainer").style.display = "block";
-            document.getElementById("result").textContent = resultat;
-            document.getElementById("conseil").textContent = conseil;
-            document.getElementById("citation").textContent = citation;
-
-            creerGraphique(score);
-        }
-
-        function creerGraphique(score) {
-            const ctx = document.getElementById('resultGraph').getContext('2d');
-            chart = new Chart(ctx, {
-                type: 'doughnut',
-                data: {
-                    labels: ['Réponses positives', 'Réponses négatives'],
-                    datasets: [{
-                        data: [score, questions.length - score],
-                        backgroundColor: ['#4CAF50', '#FF5252']
-                    }]
-                },
-                options: {
-                    responsive: true,
-                    maintainAspectRatio: false,
-                    plugins: {
-                        legend: {
-                            position: 'bottom'
-                        }
-                    }
-                }
-            });
-        }
-
-        function recommencer() {
-            questionIndex = 0;
-            reponses = [];
-            document.getElementById("questionContainer").style.display = "block";
-            document.getElementById("resultContainer").style.display = "none";
-            if (chart) {
-                chart.destroy();
-            }
-            afficherQuestion();
-        }
-
-        afficherQuestion();
-        // Simuler que l'utilisateur a terminé l'évaluation
-    window.onload = function() {
-        // Attendre 2 secondes avant d'afficher le bouton de partage
-        setTimeout(function() {
-            document.getElementById('shareButton').style.display = 'block';
-        }, 2000); // Temps d'attente avant d'afficher le bouton
-    };
-
-    function shareResult() {
-        if (navigator.share) {
-            navigator.share({
-                title: 'Mon évaluation',
-                text: 'J’ai obtenu 70% de chances de réussir, et toi ? Fais le test !',
-                url: window.location.href
-            })
-            .then(() => console.log('Partage réussi !'))
-            .catch(err => console.log('Échec du partage : ', err));
+      function afficherQuestion() {
+        if (questionIndex < questions.length) {
+          document.getElementById("question").textContent =
+            questions[questionIndex];
+          updateProgressBar();
         } else {
-            alert('Le partage n’est pas supporté sur ce navigateur.');
+          afficherResultat();
         }
-    }
+      }
+
+      function repondre(reponse) {
+        reponses.push(reponse);
+        questionIndex++;
+        afficherQuestion();
+      }
+
+      function updateProgressBar() {
+        const progress = (questionIndex / questions.length) * 100;
+        document.querySelector("#progressBar div").style.width = progress + "%";
+      }
+
+      function afficherResultat() {
+        const score = reponses.filter((r) => r).length;
+        const pourcentage = (score / questions.length) * 100;
+        let resultat, conseil, citation;
+
+        if (pourcentage >= 70) {
+          resultat = `Résultat : Tu es sur la bonne voie avec ${pourcentage.toFixed(
+            0
+          )}% de chances de réussite !`;
+          conseil =
+            "félicitations, tu es sur la bonne voie. Mais souviens-toi, même les victoires peuvent être éphémères. Les efforts ne sont jamais finis, et parfois, malgré tout le travail accompli, il peut suffire d'un rien pour tout perdre. Continue de te battre, car le pire pourrait encore venir..";
+          citation =
+            "\"Le succès n'est pas final, l'échec n'est pas fatal : c'est le courage de continuer qui compte.\" – Winston Churchill";
+        } else {
+          resultat =
+            "Résultat : Faible pour le moment, mais tout est encore possible avec plus de travail !";
+          conseil =
+            "ecoute moi, le chemin est difficile, et aujourd'hui, tu n'as pas réussi à franchir certains l'obstacle. si tu veut reussir vous devez laisser beaucoup de chose qui n'est pas lié à votre objectif, Mais parfois, il semble que tout est contre toi, que tes efforts ne sont pas récompensés. Et pourtant, c'est souvent dans ces moments de défaite que se cache la force nécessaire pour continuer. Mais il faut accepter que, même avec tout ton cœur et ton travail, la victoire pourrait encore te fuir donc il faut jamais abandonner...";
+          citation =
+            '"Ne perds jamais espoir, c\'est souvent la dernière clé du trousseau qui ouvre la porte." – Paulo Coelho';
+        }
+
+        document.getElementById("questionContainer").style.display = "none";
+        document.getElementById("resultContainer").style.display = "block";
+        document.getElementById("result").textContent = resultat;
+        document.getElementById("conseil").textContent = conseil;
+        document.getElementById("citation").textContent = citation;
+
+        creerGraphique(score);
+      }
+
+      function creerGraphique(score) {
+        const ctx = document.getElementById("resultGraph").getContext("2d");
+        chart = new Chart(ctx, {
+          type: "doughnut",
+          data: {
+            labels: ["Réponses positives", "Réponses négatives"],
+            datasets: [
+              {
+                data: [score, questions.length - score],
+                backgroundColor: ["#4CAF50", "#FF5252"],
+              },
+            ],
+          },
+          options: {
+            responsive: true,
+            maintainAspectRatio: false,
+            plugins: {
+              legend: {
+                position: "bottom",
+              },
+            },
+          },
+        });
+      }
+
+      function recommencer() {
+        questionIndex = 0;
+        reponses = [];
+        document.getElementById("questionContainer").style.display = "block";
+        document.getElementById("resultContainer").style.display = "none";
+        if (chart) {
+          chart.destroy();
+        }
+        afficherQuestion();
+      }
+
+      afficherQuestion();
     </script>
-</body>
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
+      integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz"
+      crossorigin="anonymous"
+    ></script>
+  </body>
 </html>
